@@ -1,0 +1,71 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8955f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="plateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:0.95" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="96" cy="96" r="88" fill="url(#backgroundGradient)" stroke="#b8955f" stroke-width="3"/>
+  
+  <!-- Restaurant Plate -->
+  <circle cx="96" cy="100" r="52" fill="url(#plateGradient)" stroke="#d4a574" stroke-width="2" filter="url(#shadow)"/>
+  
+  <!-- Pasta/Food Design -->
+  <g transform="translate(96, 100)">
+    <!-- Pasta strands -->
+    <path d="M-25,-15 Q-10,-25 5,-15 Q20,-5 25,5 Q10,15 -5,15 Q-20,5 -25,-15" 
+          fill="#ff6b35" stroke="#e55a2b" stroke-width="1.5" opacity="0.9"/>
+    <path d="M-20,-8 Q-5,-18 10,-8 Q25,2 20,12 Q5,22 -10,12 Q-25,2 -20,-8" 
+          fill="#ff6b35" stroke="#e55a2b" stroke-width="1.5" opacity="0.8"/>
+    <path d="M-15,-1 Q0,-11 15,-1 Q30,9 25,19 Q10,29 -5,19 Q-20,9 -15,-1" 
+          fill="#ff6b35" stroke="#e55a2b" stroke-width="1.5" opacity="0.7"/>
+    
+    <!-- Basil leaves -->
+    <ellipse cx="-18" cy="-12" rx="4" ry="8" fill="#2d7d32" transform="rotate(-25)"/>
+    <ellipse cx="15" cy="-8" rx="4" ry="8" fill="#2d7d32" transform="rotate(35)"/>
+    <ellipse cx="-5" cy="18" rx="4" ry="8" fill="#2d7d32" transform="rotate(-15)"/>
+    
+    <!-- Cherry tomatoes -->
+    <circle cx="-12" cy="8" r="4" fill="#d32f2f"/>
+    <circle cx="18" cy="5" r="4" fill="#d32f2f"/>
+    <circle cx="8" cy="-12" r="4" fill="#d32f2f"/>
+    
+    <!-- Highlight on tomatoes -->
+    <circle cx="-10" cy="6" r="1.5" fill="#ffcdd2" opacity="0.8"/>
+    <circle cx="20" cy="3" r="1.5" fill="#ffcdd2" opacity="0.8"/>
+    <circle cx="10" cy="-14" r="1.5" fill="#ffcdd2" opacity="0.8"/>
+  </g>
+  
+  <!-- Restaurant Name Banner -->
+  <rect x="24" y="32" width="144" height="24" rx="12" fill="#2c2c2c" opacity="0.85"/>
+  <text x="96" y="47" font-family="serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    BELLA VISTA
+  </text>
+  
+  <!-- Decorative Elements -->
+  <g transform="translate(96, 170)">
+    <!-- Chef's hat -->
+    <ellipse cx="0" cy="0" rx="16" ry="8" fill="#ffffff" stroke="#d4a574" stroke-width="1"/>
+    <rect x="-12" y="-8" width="24" height="8" fill="#ffffff"/>
+    <circle cx="-8" cy="-12" r="2" fill="#d4a574" opacity="0.6"/>
+    <circle cx="0" cy="-14" r="2" fill="#d4a574" opacity="0.6"/>
+    <circle cx="8" cy="-12" r="2" fill="#d4a574" opacity="0.6"/>
+  </g>
+  
+  <!-- Sparkle Effects -->
+  <g fill="#ffffff" opacity="0.8">
+    <polygon points="72,48 74,52 78,52 75,55 76,59 72,56 68,59 69,55 66,52 70,52" transform="scale(0.6)"/>
+    <polygon points="120,64 122,68 126,68 123,71 124,75 120,72 116,75 117,71 114,68 118,68" transform="scale(0.5)"/>
+    <polygon points="144,120 146,124 150,124 147,127 148,131 144,128 140,131 141,127 138,124 142,124" transform="scale(0.4)"/>
+    <polygon points="48,136 50,140 54,140 51,143 52,147 48,144 44,147 45,143 42,140 46,140" transform="scale(0.5)"/>
+  </g>
+</svg>

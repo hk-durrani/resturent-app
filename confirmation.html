@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Bella Vista Restaurant</title>
+    <meta name="description" content="Your order has been confirmed">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#d4a574">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bella Vista">
+    
+    <!-- Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icons/icon-192.svg">
+    <link rel="apple-touch-icon" href="icons/icon-192.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="icons/icon-192.svg" alt="Bella Vista Logo" class="logo">
+                    <span class="brand-name">Bella Vista</span>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="menu.html" class="nav-link">Menu</a>
+                    <a href="cart.html" class="nav-link">
+                        Cart
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i data-feather="sun" class="theme-icon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Confirmation Content -->
+        <section class="confirmation-section">
+            <div class="container">
+                <div class="confirmation-content">
+                    <!-- Success Icon -->
+                    <div class="confirmation-icon">
+                        <div class="success-icon">
+                            <i data-feather="check-circle"></i>
+                        </div>
+                    </div>
+
+                    <!-- Confirmation Message -->
+                    <div class="confirmation-message">
+                        <h1 class="confirmation-title">Order Confirmed!</h1>
+                        <p class="confirmation-subtitle">Thank you for your order. We're preparing your delicious meal.</p>
+                    </div>
+
+                    <!-- Order Details -->
+                    <div class="order-details">
+                        <div class="order-info-card">
+                            <h3 class="order-info-title">Order Information</h3>
+                            
+                            <div class="order-info-row">
+                                <span class="info-label">Order Number:</span>
+                                <span class="info-value" id="orderNumber">#BV-001</span>
+                            </div>
+                            
+                            <div class="order-info-row">
+                                <span class="info-label">Estimated Delivery:</span>
+                                <span class="info-value" id="estimatedDelivery">30-45 minutes</span>
+                            </div>
+                            
+                            <div class="order-info-row">
+                                <span class="info-label">Delivery Address:</span>
+                                <span class="info-value" id="deliveryAddress">Loading...</span>
+                            </div>
+                            
+                            <div class="order-info-row">
+                                <span class="info-label">Payment Method:</span>
+                                <span class="info-value" id="paymentMethod">Cash on Delivery</span>
+                            </div>
+                            
+                            <div class="order-info-row">
+                                <span class="info-label">Total Amount:</span>
+                                <span class="info-value total-amount" id="totalAmount">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Order Items -->
+                        <div class="order-items-card">
+                            <h3 class="order-items-title">Your Order</h3>
+                            <div class="confirmation-items" id="confirmationItems">
+                                <!-- Items will be loaded by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Status -->
+                    <div class="order-status">
+                        <h3 class="status-title">Order Status</h3>
+                        <div class="status-timeline">
+                            <div class="status-step active">
+                                <div class="step-icon">
+                                    <i data-feather="check"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Order Confirmed</h4>
+                                    <p>Your order has been received</p>
+                                </div>
+                            </div>
+                            
+                            <div class="status-step">
+                                <div class="step-icon">
+                                    <i data-feather="clock"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Preparing</h4>
+                                    <p>Our chefs are preparing your food</p>
+                                </div>
+                            </div>
+                            
+                            <div class="status-step">
+                                <div class="step-icon">
+                                    <i data-feather="truck"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>On the Way</h4>
+                                    <p>Your order is being delivered</p>
+                                </div>
+                            </div>
+                            
+                            <div class="status-step">
+                                <div class="step-icon">
+                                    <i data-feather="home"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Delivered</h4>
+                                    <p>Enjoy your meal!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="confirmation-actions">
+                        <a href="index.html" class="btn btn-primary">
+                            <i data-feather="home"></i>
+                            Back to Home
+                        </a>
+                        <a href="menu.html" class="btn btn-outline">
+                            <i data-feather="shopping-bag"></i>
+                            Order Again
+                        </a>
+                        <a href="contact.html" class="btn btn-ghost">
+                            <i data-feather="phone"></i>
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Bella Vista</h3>
+                    <p class="footer-description">Authentic Italian cuisine since 1985</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i data-feather="twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i data-feather="map-pin"></i> 123 Italian Street, Food City</p>
+                        <p><i data-feather="phone"></i> (555) 123-4567</p>
+                        <p><i data-feather="mail"></i> info@bellavista.com</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Opening Hours</h4>
+                    <div class="opening-hours">
+                        <p>Mon - Thu: 11:00 AM - 10:00 PM</p>
+                        <p>Fri - Sat: 11:00 AM - 11:00 PM</p>
+                        <p>Sunday: 12:00 PM - 9:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bella Vista Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Load confirmation details on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConfirmationDetails();
+            
+            // Simulate order status updates
+            setTimeout(() => {
+                updateOrderStatus('preparing');
+            }, 3000);
+            
+            setTimeout(() => {
+                updateOrderStatus('on-the-way');
+            }, 15000);
+        });
+        
+        function loadConfirmationDetails() {
+            // Load order details from localStorage
+            const orderData = JSON.parse(localStorage.getItem('lastOrder') || '{}');
+            const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
+            
+            // Generate order number
+            const orderNumber = '#BV-' + Date.now().toString().slice(-6);
+            document.getElementById('orderNumber').textContent = orderNumber;
+            
+            // Load delivery address
+            if (orderData.deliveryAddress) {
+                document.getElementById('deliveryAddress').textContent = 
+                    `${orderData.deliveryAddress}, ${orderData.city} ${orderData.zipCode}`;
+            }
+            
+            // Load payment method
+            const paymentMethods = {
+                'cash': 'Cash on Delivery',
+                'card': 'Credit/Debit Card',
+                'digital': 'Digital Wallet'
+            };
+            document.getElementById('paymentMethod').textContent = 
+                paymentMethods[orderData.paymentMethod] || 'Cash on Delivery';
+            
+            // Load total amount
+            const total = parseFloat(localStorage.getItem('cartTotal') || '0');
+            document.getElementById('totalAmount').textContent = `$${total.toFixed(2)}`;
+            
+            // Load order items
+            loadConfirmationItems(cartItems);
+            
+            // Clear cart after successful order
+            localStorage.removeItem('cart');
+            localStorage.removeItem('cartTotal');
+            updateCartCount();
+        }
+        
+        function loadConfirmationItems(items) {
+            const container = document.getElementById('confirmationItems');
+            
+            if (items.length === 0) {
+                container.innerHTML = '<p class="no-items">No items found</p>';
+                return;
+            }
+            
+            container.innerHTML = items.map(item => `
+                <div class="confirmation-item">
+                    <img src="${item.image}" alt="${item.name}" class="confirmation-item-image">
+                    <div class="confirmation-item-details">
+                        <h4 class="confirmation-item-name">${item.name}</h4>
+                        <p class="confirmation-item-quantity">Quantity: ${item.quantity}</p>
+                        <p class="confirmation-item-price">$${(item.price * item.quantity).toFixed(2)}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function updateOrderStatus(status) {
+            const steps = document.querySelectorAll('.status-step');
+            
+            steps.forEach((step, index) => {
+                step.classList.remove('active');
+                if (
+                    (status === 'preparing' && index <= 1) ||
+                    (status === 'on-the-way' && index <= 2) ||
+                    (status === 'delivered' && index <= 3)
+                ) {
+                    step.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
